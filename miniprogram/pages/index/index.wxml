@@ -1,9 +1,19 @@
 <!--index.wxml-->
-<view class="container">
-
-<view>
-  <text>南宁：</text>
-  <text >{{weather}}</text>
-</view>
-
+<view class="weather-wrapper">
+<image src="/images/sunny_bg.png" mode="scaleToFill" class="bgimg"></image>
+  <view class="location-text">{{city}}</view>
+  <view class="temp">{{temp}}°</view>
+  <view class="weather">
+    <text class="weather-txt">{{weather}}</text>
+    <text class="air_label">空气{{air}}</text>
+  </view>
+  <view>
+    <view class="proposeCY">穿衣建议：{{proposeCY}}</view>
+    <view class="humidity">湿度：{{humidity}}</view>
+    <view class="pm25">PM2.5：{{pm25}}</view>
+  </view>
+  <view class="day-weather">
+    <view class="day-text">{{today}}</view>
+    <view class="wd-text">{{wd}}</view>
+  </view>
 </view>
