@@ -12,6 +12,7 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
+    future: []
   },
   
   onLoad: function() {
@@ -62,60 +63,30 @@ Page({
   // 获取当前天气
   getNowWeather(adCode) {
     var that = this
-    console.log(adCode)
+    console.log('adcode:'+adCode)
 
     // 获取实时预告
     wx.request({
-      url: 'https://www.ccccye.cn/weather/today',
+      url: 'https://www.ccccye.cn/weather/get.do',
       data: { adcode: adCode},
       complete(res) {
         console.log(res)
-        if (res.statusCode == 200) {
+        if (res.statusCode == 200 && res.data.code == 200) {
+
           that.setData({
-            city: res.data.city,
-            temp: res.data.temp,
-            weather: res.data.weather,
-            today: res.data.today,
-            wd: res.data.wd,
-            humidity: res.data.humidity,
-            pm25: res.data.pm25
+            city: res.data.data.city,
+            temp: res.data.data.temp,
+            weather: res.data.data.weather,
+            today: res.data.data.today,
+            wd: res.data.data.wd,
+            humidity: res.data.data.humidity,
+            pm25: res.data.data.pm25,
+
+            air: res.data.data.lifeInfo.zs_kqwr.type,
+            proposeCY: res.data.data.lifeInfo.zs_cy.info,
+
+            future: res.data.data.futureWeatherVo4D
           })
-        }
-        else {
-
-        }
-      }
-    })
-
-    //获取生活指数
-    wx.request({
-      url: 'https://www.ccccye.cn/weather/life',
-      data: { adcode: adCode},
-      complete(res) {
-        console.log(res)
-        if (res.statusCode == 200) {
-          that.setData({
-            air: res.data.data.zs_kqwr.type,
-            proposeCY: res.data.data.zs_cy.info
-          })
-        }
-        else {
-
-        }
-      }
-    })
-
-
-    // 获取最近6天的天气信息
-    wx.request({
-      url: 'https://www.ccccye.cn/weather/d6',
-      data: { adcode: adCode },
-      complete(res) {
-        console.log(res)
-        if (res.statusCode == 200) {
-          // that.setData({
-            
-          // })
         }
         else {
 
