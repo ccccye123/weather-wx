@@ -106,7 +106,7 @@ Page({
     })
 
 
-    // 获取未来6天的天气预告
+    // 获取最近6天的天气信息
     wx.request({
       url: 'https://www.ccccye.cn/weather/d6',
       data: { adcode: adCode },
