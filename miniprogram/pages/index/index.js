@@ -74,18 +74,18 @@ Page({
         if (res.statusCode == 200 && res.data.code == 200) {
 
           that.setData({
-            city: res.data.data.city,
-            temp: res.data.data.temp,
-            weather: res.data.data.weather,
+            city: res.data.data.location,
+            temp: res.data.data.realTime.temp,
+            weather: res.data.data.realTime.weather,
             today: res.data.data.today,
-            wd: res.data.data.wd,
-            humidity: res.data.data.humidity,
-            pm25: res.data.data.pm25,
+            wd: res.data.data.realTime.windDir,
+            humidity: res.data.data.realTime.humidity,
+            // pm25: res.data.data.pm25,
 
-            air: res.data.data.lifeInfo.zs_kqwr.type,
-            proposeCY: res.data.data.lifeInfo.zs_cy.info,
+            // air: res.data.data.lifeInfo.zs_kqwr.type,
+            proposeCY: res.data.data.lifeStyle.drsg.txt,
 
-            future: res.data.data.futureWeatherVo4D
+            future: res.data.data.forecasts
           })
         }
         else {

@@ -22,7 +22,7 @@
 <view wx:for="{{future}}" wx:key="*this">
   <view>
     <text>日期：{{item.date}}</text>
-    <text>最低温度:{{item.templow}}</text>
-    <text>风向：{{item.wind}}</text>
+    <text>最低温度:{{item.tempMin}}</text>
+    <text>风向：{{item.windDir}}</text>
   </view>
 </view>
