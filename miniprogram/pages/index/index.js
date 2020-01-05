@@ -12,7 +12,7 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
-    future: []
+    forecasts: []
   },
   
   onLoad: function() {
@@ -85,7 +85,7 @@ Page({
             // air: res.data.data.lifeInfo.zs_kqwr.type,
             proposeCY: res.data.data.lifeStyle.drsg.txt,
 
-            future: res.data.data.forecasts
+            forecasts: res.data.data.forecasts
           })
         }
         else {

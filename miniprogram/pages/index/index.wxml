@@ -9,8 +9,8 @@
   </view>
   <view>
     <view class="proposeCY">穿衣建议：{{proposeCY}}</view>
-    <view class="humidity">湿度：{{humidity}}</view>
-    <view class="pm25">PM2.5：{{pm25}}</view>
+    <!-- <view class="humidity">湿度：{{humidity}}</view> -->
+    <!-- <view class="pm25">PM2.5：{{pm25}}</view> -->
   </view>
   <view class="day-weather">
     <view class="day-text">{{today}}</view>
@@ -19,10 +19,10 @@
 </view>
 
 
-<view wx:for="{{future}}" wx:key="*this">
-  <view>
-    <text>日期：{{item.date}}</text>
-    <text>最低温度:{{item.tempMin}}</text>
-    <text>风向：{{item.windDir}}</text>
+<view wx:for="{{forecasts}}" wx:key="*this">
+  <view class="forecast">
+    <text>{{item.date}}</text>
+    <text class="forecast-temp">最低温度:{{item.tempMin}}°</text>
+    <text class="forecast-wind">风向:{{item.windDir}}</text>
   </view>
 </view>

@@ -36,6 +36,16 @@
   border-radius: 10rpx;
   padding:8rpx;
 }
+
+.proposeCY{
+  text-align: center;
+  margin-left: 20rpx;
+  margin-top: 60rpx;
+  border-radius: 10rpx;
+  padding:8rpx;
+  opacity: 0.65;
+}
+
 .day-weather {
   display: flex;
   align-items: center;
@@ -52,4 +62,14 @@
   flex-grow: 1;
   padding-right: 30rpx;
   text-align: right;
+}
+
+.forecast{
+  font-size: 35rpx;
+}
+.forecast-temp{
+  margin-left: 45rpx;
+}
+.forecast-wind{
+  margin-left: 45rpx;
 }
