@@ -67,25 +67,25 @@ Page({
 
     // 获取实时预告
     wx.request({
-      url: 'https://www.ccccye.cn/weather/get.do',
+      url: 'https://ccccye.cn/weather/get.do',
       data: { adcode: adCode},
       complete(res) {
         console.log(res)
-        if (res.statusCode == 200 && res.data.code == 200) {
+        if (res.statusCode == 200) {
 
           that.setData({
-            city: res.data.data.location,
-            temp: res.data.data.realTime.temp,
-            weather: res.data.data.realTime.weather,
-            today: res.data.data.today,
-            wd: res.data.data.realTime.windDir,
-            humidity: res.data.data.realTime.humidity,
+            city: res.data.location,
+            temp: res.data.realTime.temp,
+            weather: res.data.realTime.weather,
+            today: res.data.today,
+            wd: res.data.realTime.windDir,
+            humidity: res.data.realTime.humidity,
             // pm25: res.data.data.pm25,
 
             // air: res.data.data.lifeInfo.zs_kqwr.type,
-            proposeCY: res.data.data.lifeStyle.drsg.txt,
+            proposeCY: res.data.lifeStyle.drsg.txt,
 
-            forecasts: res.data.data.forecasts
+            forecasts: res.data.forecasts
           })
         }
         else {
@@ -93,6 +93,33 @@ Page({
         }
       }
     })
+    // wx.request({
+    //   url: 'https://ccccye.cn/weather/weather/get.do',
+    //   data: { adcode: adCode},
+    //   complete(res) {
+    //     console.log(res)
+    //     if (res.statusCode == 200 && res.data.code == 200) {
+
+    //       that.setData({
+    //         city: res.data.data.location,
+    //         temp: res.data.data.realTime.temp,
+    //         weather: res.data.data.realTime.weather,
+    //         today: res.data.data.today,
+    //         wd: res.data.data.realTime.windDir,
+    //         humidity: res.data.data.realTime.humidity,
+    //         // pm25: res.data.data.pm25,
+
+    //         // air: res.data.data.lifeInfo.zs_kqwr.type,
+    //         proposeCY: res.data.data.lifeStyle.drsg.txt,
+
+    //         forecasts: res.data.data.forecasts
+    //       })
+    //     }
+    //     else {
+
+    //     }
+    //   }
+    // })
 
   }
 
